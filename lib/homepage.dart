@@ -16,19 +16,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    double topPosition;
-    double bottomPosition;
-    double leftPosition;
-    double rightPosition;
-    double hightPosition;
-    double screenWidth = MediaQuery.of(context).size.width;
-    if (screenWidth >= 768) {
-      //desktop
-      rightPosition = 50;
-    } else {
-      //mobile
-      rightPosition = 10;
-    }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: '326BFF'.toColor(),
