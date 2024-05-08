@@ -15,7 +15,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   List<Kategori> kategori = [
     Kategori(
       id: '1',
@@ -68,27 +67,54 @@ class _MyHomePageState extends State<MyHomePage> {
             left: 0,
             child: Container(
               color: Colors.grey.shade300,
-              constraints: BoxConstraints(maxWidth: 300),
-              height: MediaQuery.of(context).size.height,
-              // width: MediaQuery.of(context).size.width,
+              width: MediaQuery.of(context).size.width * 0.2,
+              // height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.all(10),
               child: Column(
                 children: [
+                  LayoutBuilder(
+                    builder: (context, constraints) {
+                      double containerWidth = constraints.maxWidth;
+                      if (containerWidth < 200) {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.all(10),
+                            margin: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: '326BFF'.toColor(),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Icon(Icons.home, color: Colors.white, size: 25),
+                          ),
+                        );
+                      } else {
+                        return GestureDetector(
+                          onTap: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.all(10),
+                            margin: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: '326BFF'.toColor(),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Text(
+                              'Dashboard',
+                              style: TextStyle(color: Colors.white),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                  ),
                   Container(
-                    padding: EdgeInsets.all(10),
-                    margin: EdgeInsets.all(5),
-                    constraints: BoxConstraints(maxWidth: 200),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: '326BFF'.toColor(),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(
-                      'Dashboard',
-                      style: TextStyle(color: Colors.white),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                    color: Colors.grey.shade300,
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width * 0.2,
                   ),
                 ],
               ),
@@ -98,9 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             right: 0,
             child: Container(
               color: Colors.white,
-              constraints: BoxConstraints(maxWidth: 1210),
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width * 0.8,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 // mainAxisAlignment: MainAxisAlignment.center,
@@ -195,8 +219,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Wrap(
                       spacing: 14,
                       runSpacing: 15,
-                      children: kategori.map((e) => KategoriDetail(e)).toList()
-                  ),
+                      children:
+                          kategori.map((e) => KategoriDetail(e)).toList()),
                   Container(
                     padding: EdgeInsets.only(left: 15, right: 25),
                     child: Column(
