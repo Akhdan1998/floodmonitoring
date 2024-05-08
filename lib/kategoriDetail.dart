@@ -16,7 +16,7 @@ class _KategoriDetailState extends State<KategoriDetail> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 222,
+      width: 229,
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),

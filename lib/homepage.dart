@@ -68,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Container(
               color: Colors.grey.shade300,
               width: MediaQuery.of(context).size.width * 0.2,
-              // height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.all(10),
               child: Column(
                 children: [
@@ -127,7 +126,6 @@ class _MyHomePageState extends State<MyHomePage> {
               width: MediaQuery.of(context).size.width * 0.8,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     padding: EdgeInsets.all(15),
