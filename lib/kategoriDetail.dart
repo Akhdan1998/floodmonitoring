@@ -16,8 +16,10 @@ class _KategoriDetailState extends State<KategoriDetail> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: 229,
+      constraints: BoxConstraints(maxWidth: 227),
+      // width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.all(10),
+      margin: EdgeInsets.all(15),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.grey.shade200,
@@ -55,7 +57,7 @@ class _KategoriDetailState extends State<KategoriDetail> {
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              'Km/Jam',
+                              ' Km/Jam',
                               style: TextStyle(
                                   fontSize: 20, fontWeight: FontWeight.bold),
                               maxLines: 1,
